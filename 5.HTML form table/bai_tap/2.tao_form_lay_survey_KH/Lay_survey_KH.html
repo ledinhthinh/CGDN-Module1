@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Khách Hàng</title>
+</head>
+<style>
+    body {
+        font-family:Arial;font-size: 12px;font-weight: normal;
+    }
+</style>
+<body>
+<h3>Market Research Survey</h3>
+<h5>Please take a few moments to complete this satisfaction survey.</h5>
+<hr style="background-color: darkgrey">
+<form method="get" action="Lay_survey_KH.html">
+    <h5> What is your age range? </h5>
+    <select>
+        <option value="18-24">18-24</option>
+        <option value="25-34">25-34</option>
+        <option value="35-50">35-50</option>
+        <option value="50+">50+</option>
+    </select> <br>
+    <h5>What is your yearly income range?</h5>
+    <select>
+        <option value="$0-%25.000">$0-$25.000</option>
+        <option value="$25.001-%50.000">$25.001-$50.000</option>
+        <option value="$50.001-%100.000">$50.001-$100.000</option>
+        <option value="$100.000+">$100.000+</option>
+    </select><br>
+    <h5>Gender Identity</h5>
+    <input type="radio" value="Male"name="GT">Male  <br><br>
+    <input type="radio" value="Female"name="GT">Female  <br><br>
+    <input type="radio" value="Nonbinary"name="GT">Nonbinary  <br><br>
+    <input type="radio" value="Other"name="GT">Other  <br><br>
+    <input type="text" maxlength="250">
+    <h5>Which of the following products have your purchased in the last 2 months. Please check all that apply.</h5>
+    <input type="checkbox" value="Product 1 ">Product 1 <br><br>
+    <input type="checkbox" value="Product 2 ">Product 2 <br><br>
+    <input type="checkbox" value="Product 3 ">Product 3 <br><br>
+    <h5>How often would you use our new product?</h5>
+    <input type="radio" value="Daily "name="1">Daily   <br><br>
+    <input type="radio" value="Weekly "name="1">Weekly  <br><br>
+    <input type="radio" value="Monthly "name="1">Monthly   <br><br>
+<h5>What would you pay for the new product?</h5>
+    $<input type="text" style="width: 50px">.<input type="text" style="width: 20px"> <br>
+        <label>Dollars&ensp;&emsp;Cents</label>
+    <h5>What features would you like to see in the new product.</h5>
+    <textarea></textarea>
+</form>
+</body>
+</html>

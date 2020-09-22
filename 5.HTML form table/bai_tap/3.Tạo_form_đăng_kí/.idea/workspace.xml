@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3291cbb4-c7f7-4d12-b58c-f05f1c469232" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../1.tao_form_don_gian/dang_ki_sinh_vien.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2.tao_form_lay_survey_KH/Lay_survey_KH.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Form_dang_ki.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/Tao_form_co_ban.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/form google.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../4.git_&amp;_html/bai_tap/git_project/gitproject" beforeDir="false" afterPath="$PROJECT_DIR$/../../../4.git_&amp;_html/bai_tap/git_project/gitproject" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1hoaO560CMBqM09NqFcPjwXAY0o" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../thuc_hanh" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3291cbb4-c7f7-4d12-b58c-f05f1c469232" name="Default Changelist" comment="" />
+      <created>1600679863661</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600679863661</updated>
+      <workItem from="1600679864907" duration="1014000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="173" key="FileChooserDialogImpl" timestamp="1600680877363">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="549" y="173" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1600680877363" />
+  </component>
+</project>
