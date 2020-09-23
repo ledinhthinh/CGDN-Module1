@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền </title>
+    <link rel="stylesheet" href="$$$css.css">
+</head>
+<body>
+
+<form>
+    <label>
+        Amount
+        <input type="text" id="Amount">
+        &emsp;
+        &emsp;
+        From Currency
+       <select id="From">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+
+            </select>
+        &emsp;
+        &emsp;
+        To Currency
+        <select id ="To">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+        </select>
+        <input type="button" value="Convert" onclick="tinh()">
+        <p id="xuat"></p>
+    </label>
+</form>
+<script src="$$$Js.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+let inputLi;
+let inputHoa;
+let inputSinh;
+inputHoa = prompt('Nhap diem Hoa:');
+inputLi = prompt('Nhap diem Li');
+inputSinh = prompt('Nhap diem Sinh');
+let Hoa = parseInt(inputHoa);
+let Li = parseInt(inputLi);
+let Sinh = parseInt(inputSinh);
+let T = Hoa + Li + Sinh;
+let TB = T/3;
+document.write('Tong diem =' + T);
+document.write('   Diem TB =' +TB);
