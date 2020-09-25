@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama</title>
+    <script src="Yeu_cau_1_Js.js"></script>
+</head>
+<link href="Yeu_cau_1_css.css" type="text/css" rel="stylesheet">
+<body>
+<form>
+    <h1>KHU NGHỈ DƯỠNG FURAMA</h1>
+    <label>
+        Họ và tên (Name) <input type="text" id="name"> <br><br>
+        Số CMND/CCCD <input style="margin-left: -2px" type="text" id="cmnd"><br><br>
+        Ngày sinh <input style="margin-left: 50px" type="date" id="date"> <br><br>
+        Email <input style="margin-left: 77px" type="email" id="email"> <br><br>
+        Địa chỉ <textarea style="margin-left: 70px" rows="2" id="address"> </textarea><br><br>
+        Type of Customer <select id="customer">
+        <option value="Diamond">Diamond</option>
+        <option value="Platinum">Platinum</option>
+        <option value="Gold">Gold</option>
+        <option value="Silver">Silver</option>
+        <option value="Member">Member</option>
+    </select> <br><br>
+        Giảm giá <input style="margin-left: 56px" type="number" id="sale" name="%"><br><br>
+        Số người đi kèm <input  style="margin-left: 9px" type="number" id="people"><br><br>
+        Số ngày thuê <input style="margin-left: 33px" type="number"id="rent"><br><br>
+        Loại dịch vụ <select style="margin-left: 35px" id="service">
+        <option value="Villa">Villa</option>
+        <option value="House">House</option>
+        <option value="Room">Room</option>
+    </select><br><br>
+        Loại phòng thuê <select style="margin-left: 10px" id="room">
+        <option value="Vip">Vip</option>
+        <option value="Business">Business</option>
+        <option value="Normal">Normal</option>
+    </select>
+        <input type="button" onclick="display()" value="Gửi" name="Gửi">
+    </label>
+<!--    <table style="height: 200px;width: 100%;margin-left: -280px">-->
+<!--        <tr>-->
+<!--            <th colspan="3"> BẢNG GIÁ </th>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <th>Villa</th>-->
+<!--            <th>House</th>-->
+<!--            <th>Room</th>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>500$</td>-->
+<!--            <td>300$</td>-->
+<!--            <td>100$</td>-->
+<!--        </tr>-->
+<!--    </table>-->
+</form>
+    <p id="displayName"></p>
+    <p id="displaycmnd"></p>
+    <p id="displaydate"></p>
+    <p id="displayemail"></p>
+    <p id="displayaddress"></p>
+    <p id="displaycustomer"></p>
+    <p id="displaysale"></p>
+    <p id="displaypeople"></p>
+    <p id="displayrent"></p>
+    <p id="displayservice"></p>
+    <p id="displayroom"></p>
+    <p id="displaypay"></p>
+</body>
+</html>

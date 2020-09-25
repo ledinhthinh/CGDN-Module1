@@ -1,0 +1,17 @@
+body { color: white;
+    background-image: url('https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/06/Review-Furama-Resort-Da-Nang-13.jpg');
+    background-size: cover;
+    margin-left: 35%;
+    background-repeat: no-repeat;
+    z-index: 100;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    color: black;
+    background: bisque;
+    font-family: "Lucida Grande", Lucida sans "Lucida Sans Unicode", Tahoma, sans-serif;
+}
+h1 {
+    margin-left: -80px;
+}
