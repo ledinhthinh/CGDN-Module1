@@ -35,3 +35,26 @@ function display() {
             break;
     }document.getElementById("displaypay").innerHTML = tottalPay + ' $ ';
 }
+// function edit() {
+//     let displayName = document.getElementById("displayName").value;
+//     document.getElementById("name").innerText = displayName;
+//     let displaycmnd = document.getElementById("displaycmnd").value;
+//     document.getElementById("cmnd").innerHTML = displaycmnd;
+//     let displaydate = document.getElementById("displaydate").value;
+//     document.getElementById("date").innerHTML = displaydate;
+//     let displayemail = document.getElementById("displayemail").value;
+//     document.getElementById("email").innerText = displayemail;
+//     let displayaddress = document.getElementById("displayaddress").value;
+//     document.getElementById("address").innerText = displayaddress;
+//     let displaycustomer = document.getElementById("displaycustomer").value;
+//     document.getElementById("customer").innerText = displaycustomer;
+//     let displaysale = document.getElementById("displaysale").value;
+//     document.getElementById("sale").innerText = displaysale;
+//     let displaypeople = document.getElementById("displaypeople").value;
+//     document.getElementById("people").innerText = displaypeople;
+//     let displayrent = document.getElementById("displayrent").value;
+//     document.getElementById("rent").innerText = displayrent;
+//     let displayservice = document.getElementById("displayservice").value;
+//     document.getElementById("service").innerText = displayservice;
+//     let displayroom = document.getElementById("displayroom").value;
+//     document.getElementById("room").innerText = displayroom;}
