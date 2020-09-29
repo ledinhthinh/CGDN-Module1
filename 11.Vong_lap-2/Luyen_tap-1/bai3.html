@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = 1;
+    let b = 1;
+    document.writeln(a);
+    document.writeln(b);
+    let c;
+    for (let i = 0; i < 18; i++) {
+        c = a + b;
+        a = b;
+        b = c;
+        document.writeln(c);
+    }
+</script>
+</body>
+</html>

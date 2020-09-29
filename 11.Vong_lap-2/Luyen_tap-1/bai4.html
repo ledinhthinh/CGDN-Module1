@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = 1;
+    let b = 1;
+    let c;
+    let i = 0;
+    while(true) {
+        c = a + b;
+        a = b;
+        b = c;
+        if (c % 5 === 0) {
+            document.writeln(c);
+            break;
+        }i++;
+    }
+</script>
+</body>
+</html>
