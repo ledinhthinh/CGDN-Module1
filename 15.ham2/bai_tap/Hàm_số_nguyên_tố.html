@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function nguyeto() {
+        let temp = 2;
+        let count = 0;
+        let check = false;
+        while (temp < 10000) {
+            for (let i = 2; i <= Math.sqrt(temp); i++) {
+                if (temp % i === 0) {
+                    check = true;
+                    break;
+                }
+            }
+            if (!check) {
+                document.writeln(temp)
+                count++;
+            }
+            check = false;
+            temp++;
+        }
+    }
+    nguyeto()
+</script>
+</body>
+</html>

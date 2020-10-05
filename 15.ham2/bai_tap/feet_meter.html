@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="text" id="nhap">
+    <input type="button" onclick="feetToMeter()" value="feet to meter">
+    <input type="button" onclick="meterToFeet()" value="meter to feet">
+    <input type="text" id="xuat">
+</form>
+<script>
+
+
+    function feetToMeter() {
+        let nhap = parseInt(document.getElementById('nhap').value);
+        let ketqua = 0;
+        ketqua = nhap * 0.305;
+        document.getElementById('xuat').value = ketqua;
+    }
+
+    function meterToFeet() {
+        let nhap = parseInt(document.getElementById('nhap').value);
+        let ketqua = 0;
+        ketqua = nhap * 3.279;
+        document.getElementById('xuat').value = ketqua;
+
+    }
+
+
+</script>
+</body>
+</html>
