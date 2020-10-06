@@ -20,19 +20,19 @@ function display() {
     } else {
 
 //kt cmnd
-        let checkcmnd = Number.isInteger(parseInt(cmnd));
-        if ((checkcmnd === false) ) {
+        let checkcmnd =(cmnd);
+        if (checkcmnd <10000000 && checkcmnd > 99999999) {
             alert('Nhập sai số chứng minh,xin mời nhập lại!!!');
         } else {
 //kt số người đi kèm và số ngày
-            let checkpeo = Number.isInteger(people);
-            if ((checkpeo === false) || (people < 0)) {
+            let checkpeo = parseInt(people);
+            if (checkpeo < 0) {
                 alert('Nhập sai số người đi kèm,xin mời nhập lại!!!');
             } else {
 
 //kt số ngày
-                let checkrent = Number.isInteger(rent);
-                if ((checkrent === false) || (rent < 0)) {
+                let checkrent = parseInt(rent);
+                if (checkrent <= 0) {
                     alert('Nhập sai số ngày,xin mời nhập lại!!!');
                 } else {
 //
@@ -105,6 +105,7 @@ function display() {
                             saleCus = 0;
                             break;
                     }
+//giảm giá khi nhập mã giảm giá
                     let saleCode = 0;
                     switch (code) {
                         case "FURAMA":
@@ -119,6 +120,7 @@ function display() {
                         default:
                             saleCode = 0;
                     }
+//tính tổng tiền phải trả
                     let allsale = 0;
                     allsale = saleAdd + saleCus + saleRent + saleCode;
                     let outPay = 0;

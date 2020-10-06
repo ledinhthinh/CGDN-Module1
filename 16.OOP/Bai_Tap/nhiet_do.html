@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class chuyendoi {
+        constructor(doC) {
+            this.c = doC;
+
+        }
+
+        cToF() {
+            return ((this.c * 1.8) + 32);
+        }
+
+        cToK() {
+            return (this.c + 273.15);
+        }
+    }let doc = new chuyendoi(25);
+    alert(doc.cToF());
+    alert(doc.cToK());
+</script>
+</body>
+</html>

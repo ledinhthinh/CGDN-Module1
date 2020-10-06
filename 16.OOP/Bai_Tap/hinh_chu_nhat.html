@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Hinh_chu_nhat {
+        constructor(dai, rong) {
+            this.dai = dai;
+            this.rong = rong;
+
+        }
+
+        chuvi() {
+            return (this.dai + this.rong) / 2;
+        }
+
+        dientich() {
+            return (this.dai * this.rong);
+
+
+        }
+    }
+    let hcn = new Hinh_chu_nhat(4,5);
+    alert(hcn.chuvi());
+    alert(hcn.dientich());
+</script>
+</body>
+</html>
