@@ -26,7 +26,7 @@ function display() {
         } else {
 //kt số người đi kèm và số ngày
             let checkpeo = parseInt(people);
-            if (checkpeo < 0) {
+            if (checkpeo < 0|| checkpeo === null) {
                 alert('Nhập sai số người đi kèm,xin mời nhập lại!!!');
             } else {
 

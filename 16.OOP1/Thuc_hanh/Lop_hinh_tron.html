@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class hinh_tron{
+        constructor(bankinh) {
+            this.bankinh = bankinh;
+        }
+        dientich(){
+            return Math.PI * this.bankinh*this.bankinh;
+        }
+    }
+    let htron = new hinh_tron(10);
+    alert(htron.dientich());
+</script>
+
+</body>
+</html>
