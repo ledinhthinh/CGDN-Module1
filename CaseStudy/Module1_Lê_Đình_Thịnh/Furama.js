@@ -11,31 +11,63 @@ function display() {
     let service = document.getElementById("service").value;
     let room = document.getElementById("room").value;
     let code = document.getElementById("code").value;
-//đây là đoạn code kiểm tra email
-    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    if (!filter.test(email)) {
-        alert('Hay nhap dia chi email hop le.\nExample@gmail.com');
-        email.focus;
-        return false;
+    //kt cmnd
+    if (!isNaN(cmnd)) {
+        cmnd = Number.parseFloat(cmnd);
+    }
+    if (!Number.parseFloat(cmnd)) {
+        alert("Số CMND không hợp lệ!!!")
+    } else if (cmnd < 10000000 || cmnd > 99999999) {
+        alert("Số CMND không hợp lệ!!!")
     } else {
-
-//kt cmnd
-        let checkcmnd =(cmnd);
-        if (checkcmnd <10000000 && checkcmnd > 99999999) {
-            alert('Nhập sai số chứng minh,xin mời nhập lại!!!');
+//đây là đoạn code kiểm tra email
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!filter.test(email)) {
+            alert('Hay nhap dia chi email hop le.\nExample@gmail.com');
+            email.focus;
+            return false;
         } else {
-//kt số người đi kèm và số ngày
-            let checkpeo = parseInt(people);
-            if (checkpeo < 0|| checkpeo === null) {
-                alert('Nhập sai số người đi kèm,xin mời nhập lại!!!');
+            if (!isNaN(people)) {
+                people = Number.parseFloat(people);
+            }
+            if (!Number.parseFloat(people)) {
+                alert("Số người đi kèm không hợp lệ!!!")
+            } else if (people < 0) {
+                alert("Số người đi kèm không hợp lệ!!!")
             } else {
-
-//kt số ngày
-                let checkrent = parseInt(rent);
-                if (checkrent <= 0) {
-                    alert('Nhập sai số ngày,xin mời nhập lại!!!');
+                if (!isNaN(rent)) {
+                    people = Number.parseFloat(rent);
+                }
+                if (!Number.parseFloat(rent)) {
+                    alert("Số ngày thuê không hợp lệ!!!")
+                } else if (rent <= 0) {
+                    alert("Số ngày thuê không hợp lệ!!!")
                 } else {
-//
+                    let tempName = "";
+                        name = name.trim().toLowerCase();
+                        for (let i = 0; i < name.length; i++) {
+                            if (name.charAt(i) === " " && name.charAt(i + 1) === " ") {
+                                continue;
+                            }
+                            if (i === 0 || name.charAt(i - 1) === " ") {
+                                tempName += name.charAt(i).toUpperCase();
+                                continue;
+
+                            }
+                            tempName += name.charAt(i);
+                    }
+
+
+                    document.getElementById("displayName").innerText = tempName;
+                    document.getElementById("displayCmnd").innerText = cmnd;
+                    document.getElementById("displayDate").innerText = date;
+                    document.getElementById("displayEmail").innerText = email;
+                    document.getElementById("displayAddress").innerText = address;
+                    document.getElementById("displayCustomer").innerText = customer;
+                    document.getElementById("displayPeople").innerText = people;
+                    document.getElementById("displayRent").innerText = rent;
+                    document.getElementById("displayService").innerText = service;
+                    document.getElementById("displayRoom").innerText = room;
                     document.getElementById("name").value = "";
                     document.getElementById("cmnd").value = "";
                     document.getElementById("date").value = "";
@@ -47,16 +79,6 @@ function display() {
                     document.getElementById("service").value = "";
                     document.getElementById("room").value = "";
                     document.getElementById("code").value = "";
-                    document.getElementById("displayName").innerText = name;
-                    document.getElementById("displayCmnd").innerText = cmnd;
-                    document.getElementById("displayDate").innerText = date;
-                    document.getElementById("displayEmail").innerText = email;
-                    document.getElementById("displayAddress").innerText = address;
-                    document.getElementById("displayCustomer").innerText = customer;
-                    document.getElementById("displayPeople").innerText = people;
-                    document.getElementById("displayRent").innerText = rent;
-                    document.getElementById("displayService").innerText = service;
-                    document.getElementById("displayRoom").innerText = room;
 
 
                     //tính tổng tiền phải trả

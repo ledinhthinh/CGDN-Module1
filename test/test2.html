@@ -1,13 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
+​
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yêu cầu 3</title>
 </head>
+​
 <body>
 <script>
-    let name = parseInt(prompt('nhap'))
-    alert(name.length);
+    let name;
+    let cmnd;
+    let birthday;
+    let email;
+    let address;
+    let typeService;
+    let typeRoom;
+    let typeCustomer;
+    let discount;
+    let quantityIncluded;
+    let rentDays;
+    let totalPays;
+​
+        function input() {
+            let check;
+            name = prompt("Input name: ");
+            let nameStandardized = "";
+            name = name.toLocaleLowerCase();
+            for (var i = 0; i < name.length; i++) {
+                if (name.charAt(i) == " " && name.charAt(i + 1) == " ") {
+                    continue;
+                }
+                if (i == 0 || name.charAt(i - 1) == " ") {
+                    nameStandardized += name.charAt(i).toLocaleUpperCase();
+                    continue;
+                }
+                nameStandardized += name.charAt(i);
+​
+            }
+            name = nameStandardized;
+        }
+        do {
+            check = true;
+            cmnd = prompt("Input CMND: ");
+            if (!isNaN(cmnd)) {
+                cmnd = Number.parseFloat(cmnd);
+            }
+            if (!Number.isInteger(cmnd)) {
+                alert("CMND Is Invalid !!! Please Try Again")
+                check = false;
+            }
+            if (cmnd < 10000000 && cmnd > 99999999) {
+                alert("CMND Is Invalid !!! Please Try Again")
+                check = false;
+            }
+        } while (!check);
+    ​
+        do {
+            check = false;
+            birthday = prompt("Enter Birthday Customer (dd/MM/YYYY): ");
+            if (!birthday.charAt(2) == '/' || !birthday.charAt(5) == "/") {
+                alert("Birthday Is Invalid !!! Please Try Again !!!");
+                continue;
+            }
+            var day = birthday.substring(0, 2);
+            var month = birthday.substring(3, 5)
+            var year = birthday.substring(6, 10);
+            if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+                day = Number.parseFloat(day);
+                month = Number.parseFloat(month);
+                year = Number.parseFloat(year);
+                if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+                    if (day > 0 && day < 32 && month < 13 && month > 0 && year >= 1960 && year <= 2019) {
+                        check = true;
+                    }
+                }
+            }
+            if (!check) {
+                alert("Birthday Is Invalid !!! Please Try Again !!!");
+            }
+        } while (!check);
+    ​
+        do {
+            check = true;
+            email = prompt("Input Email: ");
+            var countDoc = 0;
+            var countAt = 0;
+            for (var i = 0; i < email.length; i++) {
+                if (email.charAt(i) == "@") {
+                    countAt++;
+                    for (var j = i + 1; j < email.length; j++) {
+                        if (email.charAt(j) == ".") {
+                            countDoc++;
+                        }
+                    }
+                }
+            }
+            if (countAt != 1 || countDoc < 1) {
+                check = false;
+                alert("Email Is Invalid !!! Please Try Again");
+            }
+        } while (!check);
+    ​
+        address = prompt("Input address: ");
+        address = address.trim();
+        let addressStandardized = "";
+        for (var i = 0; i < address.length; i++) {
+            if (address.charAt(i) == " " && address.charAt(i + 1) == " ") {
+                continue;
+            }
+            addressStandardized += address.charAt(i);
+        }
+        address = addressStandardized;
+    ​
+        typeCustomer = prompt("Input type of Customer (Diamond, Platinum, Gold, Silver, Member: )");
+        typeCustomer = typeCustomer.trim();
+        let typeCustomerStandardized = "";
+        for (var i = 0; i < typeCustomer.length; i++) {
+            if (typeCustomer.charAt(i) == " " && typeCustomer.charAt(i + 1) == " ") {
+                continue;
+            }
+            typeCustomerStandardized += typeCustomer.charAt(i);
+        }
+        typeCustomer = typeCustomerStandardized;
+    ​
+        do {
+            check = false;
+            discount = prompt("Input discount: ");
+            if (!isNaN(discount)) {
+                discount = Number.parseFloat(discount);
+                if (discount >= 0) {
+                    check = true;
+                }
+            }
+            if (!check) {
+                alert("Discount Is Invalid !!! Please Try Again");
+            }
+        } while (!check);
+    ​
+        do {
+            check = false;
+            quantityIncluded = prompt("Input quantity included: ");
+            if (!isNaN(quantityIncluded)) {
+                quantityIncluded = Number.parseFloat(quantityIncluded);
+                if (quantityIncluded >= 0 && Number.isInteger(quantityIncluded)) {
+                    check = true;
+                }
+            }
+            if (!check) {
+                alert("Quantity Included Is Invalid !!! Please Try Again");
+            }
+        } while (!check);
+    ​
+        do {
+            check = false;
+            rentDays = prompt("Input rent days: ");
+            if (!isNaN(rentDays)) {
+                rentDays = Number.parseFloat(rentDays);
+                if (rentDays >= 0 && Number.isInteger(rentDays)) {
+                    check = true;
+                }
+            }
+            if (!check) {
+                alert("Rent Days Is Invalid !!! Please Try Again");
+            }
+        } while (!check);
+    ​
+        typeService = prompt("Input type of service (Villa, House, Room): ");
+        typeRoom = prompt("Input type of room ((Vip, Business, Normal): ");
+        totalPays = 500 * parseFloat(rentDays) * (1 - parseFloat(discount) / 100);
+    }
+    ​
+        function display() {
+            alert("Name: " + name + "\n" +
+                "cmnd: " + cmnd + "\n" +
+                "birthday: " + birthday + "\n" +
+                "email: " + email + "\n" +
+                "address: " + address + "\n" +
+                "type of Customer: " + typeCustomer + "\n" +
+                "discount: " + discount + "\n" +
+                "quantity included: " + quantityIncluded + "\n" +
+                "rent days: " + rentDays + "\n" +
+                "type of service: " + typeService + "\n" +
+                "type of room: " + typeRoom + "\n" +
+                "Total pay: " + totalPays);
+        }
+    input();
+    display();
 </script>
 </body>
+​
 </html>
