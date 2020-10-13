@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNameCustomer = [];
+    while (true) {
+        let select = parseInt(prompt("<1> Add New Customer" + "\n" + "<2> Delete Customer"));
+        switch (select) {
+            case 1: {
+                let number = parseInt(prompt('Please enter...'));
+                for (let i = 0; i < number; i++) {
+                    let nameCustomer = prompt('Please enter new name...');
+                    arrNameCustomer.push(nameCustomer);
+                }
+                let result = '';
+                arrNameCustomer.sort();
+                for (let i = 0; i < arrNameCustomer.length; i++) {
+                    result += (i + 1) + '/ ' + arrNameCustomer[i] + "\n";
+                }
+                alert(result);
+            }
+
+                break;
+            case 2: {
+                let check = false;
+                let nameCustomer = prompt('Please enter delete name...');
+                for (let i = 0; i < arrNameCustomer.length; i++) {
+                    if (arrNameCustomer[i]===nameCustomer){
+                    arrNameCustomer.splice(i, 1)
+                    check = true;
+                    }
+                }if (!check){
+                    alert("The name is not in the array...")
+                }
+                let result = '';
+                for (let i = 0; i < arrNameCustomer.length; i++) {
+                    result += (i + 1) + '/ ' + arrNameCustomer[i] + "\n";
+                }
+                alert(result);
+                break;
+            }
+            default: {
+                alert('failed');
+            }
+        }
+    }
+</script>
+</body>
+</html>

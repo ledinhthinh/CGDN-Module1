@@ -27,6 +27,7 @@ function display() {
             email.focus;
             return false;
         } else {
+            //kt dịnh dạng số người đi kèm
             if (!isNaN(people)) {
                 people = Number.parseFloat(people);
             }
@@ -35,6 +36,7 @@ function display() {
             } else if (people < 0) {
                 alert("Số người đi kèm không hợp lệ!!!")
             } else {
+                //kt dịnh f=dạng số ngày thuê
                 if (!isNaN(rent)) {
                     people = Number.parseFloat(rent);
                 }
@@ -43,21 +45,22 @@ function display() {
                 } else if (rent <= 0) {
                     alert("Số ngày thuê không hợp lệ!!!")
                 } else {
+                    //dịnh dạng lại tên khách hàng
                     let tempName = "";
-                        name = name.trim().toLowerCase();
-                        for (let i = 0; i < name.length; i++) {
-                            if (name.charAt(i) === " " && name.charAt(i + 1) === " ") {
-                                continue;
-                            }
-                            if (i === 0 || name.charAt(i - 1) === " ") {
-                                tempName += name.charAt(i).toUpperCase();
-                                continue;
+                    name = name.trim().toLowerCase();
+                    for (let i = 0; i < name.length; i++) {
+                        if (name.charAt(i) === " " && name.charAt(i + 1) === " ") {
+                            continue;
+                        }
+                        if (i === 0 || name.charAt(i - 1) === " ") {
+                            tempName += name.charAt(i).toUpperCase();
+                            continue;
 
-                            }
-                            tempName += name.charAt(i);
+                        }
+                        tempName += name.charAt(i);
                     }
 
-
+// gửi dữ liệu đi và xóa phần hiển thị khi nhấn vào nút "GỬI"
                     document.getElementById("displayName").innerText = tempName;
                     document.getElementById("displayCmnd").innerText = cmnd;
                     document.getElementById("displayDate").innerText = date;
@@ -130,13 +133,13 @@ function display() {
 //giảm giá khi nhập mã giảm giá
                     let saleCode = 0;
                     switch (code) {
-                        case "FURAMA":
+                        case "FURAMA":   //khi nhập FURAMA sẽ được giảm 20$
                             saleCode = 20;
                             break;
-                        case "DANANG":
+                        case "DANANG":   //khi nhập DANANG thì sẽ được giảm 10$
                             saleCode = 10;
                             break;
-                        case "SONGHAN":
+                        case "SONGHAN":   //khi nhập SONGHAN thì sẽ dược[ giảm 5$
                             saleCode = 5;
                             break;
                         default:

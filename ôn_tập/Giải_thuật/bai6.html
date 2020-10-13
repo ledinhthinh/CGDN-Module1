@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt());
+    let num = 1;
+    if (n % 2 === 0) {
+        for (let i = 2; i <= n; i += 2) {
+            num *= i;
+        }
+    } else {
+        for (let i = 1; i <= n; i += 2) {
+            num *= i;
+        }
+    }
+    alert(num);
+</script>
+</body>
+</html>
