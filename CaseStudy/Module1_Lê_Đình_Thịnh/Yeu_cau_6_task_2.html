@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee</title>
+    <script src="Yeu_cau_6_task_2.js"></script>
+</head>
+<body>
+<script>
+    let listEmploy = [];
+    function displayMainMenu() {
+        let choose = parseInt(prompt("1. Add new employee."
+            + "\n2. Display infomation Employee."
+            + "\n3. Salary of employee."
+            + "\n4. Exit."));
+        switch (choose) {
+            case 1:{
+                addNewEmployee();
+                break;
+            }
+            case 2:{
+                displayInfoEmployee();
+                break;
+            }
+            case 3:{
+                displaySalary();
+                break;
+            }
+            case 4:
+                return;
+            default:{
+                displayMainMenu();
+                break;
+            }
+        }
+    }
+    function displaySalary() {
+        let temp = "";
+        for (let i = 0; i < listEmploy.length; i++){
+            temp += (i+1) + ". Name: " + listEmploy[i].nameEmployee + "\n";
+        }
+        temp += "\nChoose only one number";
+        let chooseDisplay = parseInt(prompt(temp));
+        chooseDisplay = chooseDisplay - 1;
+        if (chooseDisplay >= 0 && chooseDisplay < listEmploy.length) {
+            alert("Salary of employee " + listEmploy[chooseDisplay].getNameEmployee() + " là: " + listEmploy[chooseDisplay].getSalary());
+            displayMainMenu();
+        }else {
+            alert("Not have this number.");
+            displayMainMenu();
+        }
+    }
+    function displayInfoEmployee() {
+        let temp = "";
+        for (let i = 0; i < listEmploy.length; i++){
+            temp += (i+1) + ". Name: " + listEmploy[i].getNameEmployee() + "\n";
+        }
+        temp += "\nChoose only one number";
+        let chooseDisplay = parseInt(prompt(temp));
+        chooseDisplay = chooseDisplay - 1;
+        if (chooseDisplay >= 0 && chooseDisplay < listEmploy.length) {
+            alert("Name: " + listEmploy[chooseDisplay].getNameEmployee()
+                + "\nCmnd: " + listEmploy[chooseDisplay].getCmnd()
+                + "\nBirthday: " + listEmploy[chooseDisplay].getBirthday()
+                + "\nEmail: " + listEmploy[chooseDisplay].getEmail()
+                + "\nPhone: " + listEmploy[chooseDisplay].getPhone()
+                + "\nLevel: " + listEmploy[chooseDisplay].getLevel()
+                + "\nLocation: " + listEmploy[chooseDisplay].getLocation());
+            displayMainMenu();
+        }else {
+            alert("Not have this number.");
+            displayMainMenu();
+        }
+    }
+    function addNewEmployee() {
+        let employee = new Employee();
+        employee.setNameEmployee(prompt("Input name: "));
+        employee.setBirthday(prompt("Input Birthday: "));
+        employee.setPhone(prompt("Input Phone: "));
+        employee.setEmail(prompt("Input Email: "));
+        employee.setCmnd(prompt("Input Cmnd: "));
+        employee.setLevel(prompt("Input Level: "));
+        employee.setLocation(prompt("Input Location: "));
+        listEmploy.push(employee);
+        alert("Added Employee");
+        displayMainMenu();
+    }
+    displayMainMenu();
+</script>
+</body>
+</html>

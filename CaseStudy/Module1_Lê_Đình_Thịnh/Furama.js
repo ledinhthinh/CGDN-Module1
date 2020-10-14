@@ -17,15 +17,18 @@ function display() {
     }
     if (!Number.parseFloat(cmnd)) {
         alert("Số CMND không hợp lệ!!!")
+        document.getElementById("cmnd").value = "";
     } else if (cmnd < 10000000 || cmnd > 99999999) {
         alert("Số CMND không hợp lệ!!!")
+        document.getElementById("cmnd").value = "";
     } else {
 //đây là đoạn code kiểm tra email
-        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        let  filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if (!filter.test(email)) {
             alert('Hay nhap dia chi email hop le.\nExample@gmail.com');
-            email.focus;
+            document.getElementById("email").value = "";
             return false;
+
         } else {
             //kt dịnh dạng số người đi kèm
             if (!isNaN(people)) {
@@ -33,8 +36,10 @@ function display() {
             }
             if (!Number.parseFloat(people)) {
                 alert("Số người đi kèm không hợp lệ!!!")
+                document.getElementById("people").value = "";
             } else if (people < 0) {
                 alert("Số người đi kèm không hợp lệ!!!")
+                document.getElementById("people").value = "";
             } else {
                 //kt dịnh f=dạng số ngày thuê
                 if (!isNaN(rent)) {
@@ -42,8 +47,10 @@ function display() {
                 }
                 if (!Number.parseFloat(rent)) {
                     alert("Số ngày thuê không hợp lệ!!!")
+                    document.getElementById("rent").value = "";
                 } else if (rent <= 0) {
                     alert("Số ngày thuê không hợp lệ!!!")
+                    document.getElementById("rent").value = "";
                 } else {
                     //dịnh dạng lại tên khách hàng
                     let tempName = "";

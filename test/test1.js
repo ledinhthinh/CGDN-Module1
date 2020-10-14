@@ -55,7 +55,7 @@ function confirmCustomer() {
             '<tr><td>Ngày tháng năm sinh:</td><td><p id="birthday">'+birthDay+'</p></td></tr>' +
             '<tr><td>Email</td><td><p id="email">'+email+'</p></td></tr>' +
             '<tr><td>Địa chỉ</td><td><p id="address">'+edit(address)+'</p></td></tr>' +
-            '<tr><td>Loại Customer</td><td><p id="specialCustomer">'+specialCustomer+'</p></td></tr>' +
+            '<tr><td>Loại Yeu_cau_6_task_1_Js</td><td><p id="specialCustomer">'+specialCustomer+'</p></td></tr>' +
             '<tr><td>Số người đi kèm</td><td><p id="numOfPerson">'+numOfPerson+'</p></td></tr>' +
             '<tr><td>Số ngày thuê</td><td><p id="rentDay">'+rentDay+'</p></td></tr>' +
             '<tr><td>Loại dịch vụ</td><td><p id="specialService">'+specialService+'</p></td></tr>' +
@@ -184,7 +184,7 @@ function displayInformationCustomer(){
                 '<tr><td>Ngày tháng năm sinh:</td><td><p id="birthday">'+arrayBirthday[i]+'</p></td></tr>' +
                 '<tr><td>Email</td><td><p id="email">'+arrayEmail[i]+'</p></td></tr>' +
                 '<tr><td>Địa chỉ</td><td><p id="address">'+arrayAddress[i]+'</p></td></tr>' +
-                '<tr><td>Loại Customer</td><td><p id="specialCustomer">'+arraySpecialCustomer[i]+'</p></td></tr>' +
+                '<tr><td>Loại Yeu_cau_6_task_1_Js</td><td><p id="specialCustomer">'+arraySpecialCustomer[i]+'</p></td></tr>' +
                 '<tr><td>Số người đi kèm</td><td><p id="numOfPerson">'+arrayNumOfPerson[i]+'</p></td></tr>' +
                 '<tr><td>Số ngày thuê</td><td><p id="rentDay">'+arrayRentDay[i]+'</p></td></tr>' +
                 '<tr><td>Loại dịch vụ</td><td><p id="specialService">'+arraySpecialService[i]+'</p></td></tr>' +

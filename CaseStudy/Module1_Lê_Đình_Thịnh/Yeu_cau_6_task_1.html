@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yêu cầu 6</title>
+    <script type="text/javascript" src="Yeu_cau_6_task_1_Js.js"></script>
+
+</head>
+
+<body>
+<script>
+    let listCustomers = [];
+    let checkDeleteCustomer = false;
+    let checkEditCustomer = false;
+    let checkDisplayTotalPay = false;
+    let stringValidateBirthday = /^((0)[1-9]|[1-2][0-9]|(3)[0-1])(\/)((0)[1-9]|((1)[0-2]))(\/)\d{4}$/;
+    let stringValidateEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    function displayMainMenu() {
+        let choose = prompt(
+            "1. Add New Customer" +
+            "\n2. Display Information Customer" +
+            "\n3. Display Total Pay of customer" +
+            "\n4. Edit Information Customer" +
+            "\n5. Delete Customer" +
+            "\n6. Exit");
+        switch (choose) {
+            case "1":
+                addNewCustomer();
+                break;
+            case "2":
+                displayCustomers();
+                break;
+            case "3":
+                chooseDisplayTotalPay();
+                break;
+            case "4":
+                chooseCustomerEdit();
+                break;
+            case "5":
+                chooseDeleteCustomer();
+                break;
+            case "6":
+                return;
+            default:
+                alert("Failed!!!");
+                break;
+        }
+    }
+
+    function addNewCustomer() {
+        let checkBirthday = false;
+        let checkEmail = false;
+        let checkCmnd = false;
+        let checkQuantityIncluded = false;
+        let checkRentDays = false;
+        let customer = new Yeu_cau_6_task_1_Js();
+        customer.setName(prompt("Enter name customer: "));
+        do {
+            customer.setCMND(parseInt(prompt("Enter Id Number: ")));
+            if (isNaN(customer.getCMND())) {
+                customer.getCMND() === Number.parseFloat(customer.getCMND())
+            }
+            if (Number.parseFloat(customer.getCMND()) && customer.getCMND() > 10000000 && customer.getCMND() < 99999999) {
+                checkCmnd = true;
+            } else alert("Id number is invalid. Please try again");
+        }
+        while (!checkCmnd);
+        do {
+            customer.setBirthday(prompt("Enter Birthday Customer (dd/MM/YYYY): "));
+            if (stringValidateBirthday.test(customer.getBirthday())) {
+                checkBirthday = true;
+            } else {
+                alert("Birth is invalid. Please try again");
+            }
+        }
+        while (!checkBirthday);
+        do {
+            customer.setEmail(prompt("Enter Email Customer: "));
+            if (stringValidateEmail.test(customer.getEmail())) {
+                checkEmail = true;
+            } else {
+                alert("Email is invalid. Please try again\nExample@gmail.com");
+            }
+        } while (!checkEmail);
+        customer.setAddress(prompt("Enter Address Customer: "));
+        customer.setTypeCustomer(prompt("Enter Type Customer: "));
+        do {
+            customer.setQuantityIncluded(parseInt(prompt("Enter Quantity Included: ")));
+            if (isNaN(customer.getQuantityIncluded())) {
+                customer.getQuantityIncluded() === Number.parseFloat(customer.getQuantityIncluded())
+            }
+            if (Number.parseFloat(customer.getQuantityIncluded()) && customer.getQuantityIncluded() >= 0) {
+                checkQuantityIncluded = true;
+            } else alert("Quantity Included is invalid. Please try again");
+        }
+        while (!checkQuantityIncluded);
+        do {
+            customer.setRentDays(prompt("Enter Rent Days: "));
+            if (isNaN(customer.getRentDays())) {
+                customer.getRentDays() === Number.parseFloat(customer.getRentDays())
+            }
+            if (Number.parseFloat(customer.getRentDays()) && customer.getRentDays() > 0) {
+                checkRentDays = true;
+            } else alert("Rent days is invalid. Please try again");
+        }
+        while (!checkRentDays);
+        customer.setTypeService(prompt("Enter Type Service: \n (Villa,House,Room)"));
+        customer.setTypeRoom(prompt("Enter Type Room: "));
+        listCustomers.push(customer);
+        displayMainMenu();
+    }
+
+    function displayCustomers() {
+        if (listCustomers.length === 0) {
+            alert("The listing is currently empty. Please add customer to the list.");
+            displayMainMenu();
+        }
+        let result = "";
+        for (let i = 0; i < listCustomers.length; i++) {
+            result += "\n" + (i + 1) + ". " + "Name: " + listCustomers[i].getName() +
+                "\n" + "CMND: " + listCustomers[i].getCMND() +
+                "\n" + "Date of bith: " + listCustomers[i].getBirthday() +
+                "\n" + "Email: " + listCustomers[i].getEmail() +
+                "\n" + "Address: " + listCustomers[i].getAddress() +
+                "\n" + "Type Customer:" + listCustomers[i].getTypeCustomer() +
+                "\n" + "Quantity Included: " + listCustomers[i].getQuantityIncluded() +
+                "\n" + "Rent Days: " + listCustomers[i].getRentDays() +
+                "\n" + "Type Service: " + listCustomers[i].getTypeService() +
+                "\n" + "Type Room: " + listCustomers[i].getTypeRoom();
+        }
+        result += "\n" + (listCustomers.length + 1) + ".Back to menu.";
+        let chooseDisplayInfo = parseInt(prompt(result));
+        if (chooseDisplayInfo < (listCustomers.length + 1)) {
+            if (!checkDeleteCustomer && !checkDisplayTotalPay) {
+                displayInformationCustomer(chooseDisplayInfo - 1);
+            } else if (checkDeleteCustomer) {
+                deleteCustomer(chooseDisplayInfo - 1);
+            } else {
+                displayTotalPay(chooseDisplayInfo - 1);
+            }
+        } else {
+            checkDisplayTotalPay = false;
+            checkDeleteCustomer = false;
+            checkEditCustomer = false;
+            displayMainMenu();
+        }
+    }
+
+    function displayInformationCustomer(index) {
+        if (checkEditCustomer) {
+            let chooseInfoEdit = parseInt(prompt(
+                "1.Name : " + listCustomers[index].getName() +
+                "\n2.CMND : " + listCustomers[index].getCMND() +
+                "\n3.Birthday : " + listCustomers[index].getBirthday() +
+                "\n4.Email : " + listCustomers[index].getEmail() +
+                "\n5.Address : " + listCustomers[index].getAddress() +
+                "\n6.Type Customer : " + listCustomers[index].getTypeCustomer() +
+                "\n7.Quantity Included : " + listCustomers[index].getQuantityIncluded() +
+                "\n8.Type Room : " + listCustomers[index].getTypeRoom() +
+                "\n9.Rent Days : " + listCustomers[index].getRentDays() +
+                "\n10.Type Service : " + listCustomers[index].getTypeService() +
+                "\n11.Back. "
+            ));
+            if (chooseInfoEdit < 11) {
+                editInfomationCustomer(chooseInfoEdit - 1);
+            } else {
+                checkEditCustomer = false;
+                displayCustomers();
+            }
+        } else {
+            alert("Information of customer:\n" +
+                "Name : " + listCustomers[index].getName() +
+                "\nCMND : " + listCustomers[index].getCMND() +
+                "\nBirthday : " + listCustomers[index].getBirthday() +
+                "\nEmail : " + listCustomers[index].getEmail() +
+                "\nAddress : " + listCustomers[index].getAddress() +
+                "\nType Customer : " + listCustomers[index].getTypeCustomer() +
+                "\nAccompanying : " + listCustomers[index].getQuantityIncluded() +
+                "\nType Room : " + listCustomers[index].getTypeRoom() +
+                "\nRent Days : " + listCustomers[index].getRentDays() +
+                "\nType Service : " + listCustomers[index].getTypeService()
+            );
+            displayMainMenu();
+        }
+    }
+
+    function chooseDisplayTotalPay() {
+        checkDisplayTotalPay = true;
+        displayCustomers();
+    }
+
+    function displayTotalPay(index) {
+        alert(listCustomers[index].totalPays());
+        checkDisplayTotalPay = false;
+        displayMainMenu();
+    }
+
+    function chooseCustomerEdit() {
+        checkEditCustomer = true;
+        displayCustomers();
+    }
+
+    function editInfomationCustomer(index) {
+        let editInfo = prompt("Enter Info You Want Change:");
+        switch (index) {
+            case 0:
+                listCustomers[index].setName(editInfo);
+                break;
+            case 1:
+                listCustomers[index].setCMND(editInfo);
+                break;
+            case 2:
+                listCustomers[index].setBirthday(editInfo);
+                break;
+            case 3:
+                listCustomers[index].setEmail(editInfo);
+                break;
+            case 4:
+                listCustomers[index].setAddress(editInfo);
+                break;
+            case 5:
+                listCustomers[index].setTypeCustomer(editInfo);
+                break;
+            case 6:
+                listCustomers[index].setQuantityIncluded(editInfo);
+                break;
+            case 7:
+                listCustomers[index].setTypeRoom(editInfo);
+                break;
+            case 8:
+                listCustomers[index].setRentDays(editInfo);
+                break;
+            case 9:
+                listCustomers[index].setTypeService(editInfo);
+                break;
+            default:
+                alert("Failed");
+                return;
+        }
+        checkEditCustomer = false;
+        displayMainMenu();
+    }
+
+    function chooseDeleteCustomer() {
+        checkDeleteCustomer = true;
+        displayCustomers();
+    }
+
+    function deleteCustomer(index) {
+        let chooseConfirm = parseInt(prompt(
+            "Are you sure delete Customer: Name: "
+            + listCustomers[index].getName() +
+            "\nCMND : " + listCustomers[index].getCMND() +
+            "\nBirthday : " + listCustomers[index].getBirthday() +
+            "\nEmail : " + listCustomers[index].getEmail() +
+            "\nAddress : " + listCustomers[index].getAddress() +
+            "\nType Customer : " + listCustomers[index].getTypeCustomer() +
+            "\nAccompanying : " + listCustomers[index].getQuantityIncluded() +
+            "\nType Room : " + listCustomers[index].getTypeRoom() +
+            "\nRent Days : " + listCustomers[index].getRentDays() +
+            "\nType Service : " + listCustomers[index].getTypeService() +
+            "\n 1.Yes \n 2.No"
+            ))
+        ;
+        if (chooseConfirm === 1) {
+            listCustomers.splice(index, 1);
+            alert("Delete Complete!!!");
+        }
+        checkDeleteCustomer = false;
+        displayMainMenu();
+    }
+
+    displayMainMenu();</script>
+</body>
+
+</html>
