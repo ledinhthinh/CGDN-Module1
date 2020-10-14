@@ -5,18 +5,20 @@
     <title>Furama</title>
     <script src="Furama.js"></script>
 </head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="Furama.css" type="text/css">
 <body>
 <form>
-    <h1>KHU NGHỈ DƯỠNG FURAMA</h1>
+    <h1 class="text-danger">KHU NGHỈ DƯỠNG FURAMA</h1>
     <!--phần hiển thị thông tin cho người nhập-->
     <label>
         Họ và tên (Name) <input type="text" id="name"> <br><br>
-        Số CMND/CCCD <input style="margin-left: -2px" type="number" id="cmnd"><br><br>
-        Ngày sinh <input style="margin-left: 50px" type="date" id="date"> <br><br>
+        Số CMND/CCCD <input style="margin-left: 8px" type="number" id="cmnd"><br><br>
+        Ngày sinh <input style="margin-left: 53px" type="date" id="date"> <br><br>
         Email <input style="margin-left: 77px" type="email" id="email"> <br><br>
         Địa Chỉ
         <select style="margin-left: 66px" id="address">
+            <option value="Chọn Tỉnh">Chọn tỉnh</option>
             <option value="An Giang">An Giang</option>
             <option value="Bà rịa – Vũng tàu">Bà rịa – Vũng tàu</option>
             <option value="Bắc Giang">Bắc Giang</option>
@@ -105,6 +107,8 @@
         <input type="button" onclick="edit()" value="Edit">
     </label>
 </form>
+</body>
+<body>
 <!--phần xác nhận thông tin-->
 <p>Xác nhận thông tin</p>
 <table>
