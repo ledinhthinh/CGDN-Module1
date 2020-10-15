@@ -8,6 +8,8 @@
 <body>
 <script>
     let listEmploy = [];
+    let stringValidateBirthday = /^((0)[1-9]|[1-2][0-9]|(3)[0-1])(\/)((0)[1-9]|((1)[0-2]))(\/)\d{4}$/;
+    let stringValidateEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     function displayMainMenu() {
         let choose = parseInt(prompt("1. Add new employee."
             + "\n2. Display infomation Employee."
@@ -43,7 +45,7 @@
         let chooseDisplay = parseInt(prompt(temp));
         chooseDisplay = chooseDisplay - 1;
         if (chooseDisplay >= 0 && chooseDisplay < listEmploy.length) {
-            alert("Salary of employee " + listEmploy[chooseDisplay].getNameEmployee() + " là: " + listEmploy[chooseDisplay].getSalary());
+            alert("Salary of employee " + listEmploy[chooseDisplay].getNameEmployee() + " : " + listEmploy[chooseDisplay].getSalary());
             displayMainMenu();
         }else {
             alert("Not have this number.");
@@ -60,7 +62,7 @@
         chooseDisplay = chooseDisplay - 1;
         if (chooseDisplay >= 0 && chooseDisplay < listEmploy.length) {
             alert("Name: " + listEmploy[chooseDisplay].getNameEmployee()
-                + "\nCmnd: " + listEmploy[chooseDisplay].getCmnd()
+                + "\nCmnd: " + listEmploy[chooseDisplay].getCMND()
                 + "\nBirthday: " + listEmploy[chooseDisplay].getBirthday()
                 + "\nEmail: " + listEmploy[chooseDisplay].getEmail()
                 + "\nPhone: " + listEmploy[chooseDisplay].getPhone()
@@ -74,11 +76,48 @@
     }
     function addNewEmployee() {
         let employee = new Employee();
+        let checkBirthday = false;
+        let checkPhone = false;
+        let checkEmail = false;
+        let checkCmnd = false;
         employee.setNameEmployee(prompt("Input name: "));
-        employee.setBirthday(prompt("Input Birthday: "));
-        employee.setPhone(prompt("Input Phone: "));
-        employee.setEmail(prompt("Input Email: "));
-        employee.setCmnd(prompt("Input Cmnd: "));
+        do {
+            employee.setBirthday(prompt("Enter Birthday Customer (dd/MM/YYYY): "));
+            if (stringValidateBirthday.test(employee.getBirthday())) {
+                checkBirthday = true;
+            } else {
+                alert("Birth is invalid. Please try again");
+            }
+        }
+        while (!checkBirthday);
+        do {
+            employee.setPhone(parseInt(prompt("Enter Phone Number: ")));
+            if (isNaN(employee.getPhone())) {
+                employee.getPhone() === Number.parseFloat(employee.getPhone())
+            }
+            if (Number.parseFloat(employee.getPhone()) && employee.getPhone() > 1 && employee.getPhone() < 9999999999) {
+                checkPhone = true;
+            } else alert("Phone number is invalid. Please try again");
+        }
+        while (!checkPhone);
+        do {
+            employee.setEmail(prompt("Enter Email Customer: "));
+            if (stringValidateEmail.test(employee.getEmail())) {
+                checkEmail = true;
+            } else {
+                alert("Email is invalid. Please try again\nExample@gmail.com");
+            }
+        } while (!checkEmail);
+        do {
+            employee.setCMND(parseInt(prompt("Enter Id Number: ")));
+            if (isNaN(employee.getCMND())) {
+                employee.getCMND() === Number.parseFloat(employee.getCMND())
+            }
+            if (Number.parseFloat(employee.getCMND()) && employee.getCMND() > 10000000 && employee.getCMND() < 99999999) {
+                checkCmnd = true;
+            } else alert("Id number is invalid. Please try again");
+        }
+        while (!checkCmnd);
         employee.setLevel(prompt("Input Level: "));
         employee.setLocation(prompt("Input Location: "));
         listEmploy.push(employee);

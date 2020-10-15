@@ -33,10 +33,10 @@ class Employee {
     setEmail(email) {
         this.email = email;
     }
-    getCmnd() {
+    getCMND() {
         return this.cmnd;
     }
-    setCmnd(cmnd) {
+    setCMND(cmnd) {
         this.cmnd = cmnd;
     }
     getLevel() {

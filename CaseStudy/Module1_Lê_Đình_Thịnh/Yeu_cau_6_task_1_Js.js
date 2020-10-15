@@ -69,10 +69,10 @@ class Yeu_cau_6_task_1_Js {
             else if (this.getTypeService() === "House") {
                 moneyPerDays = 300;
             }
-            else if (this.getTypeService()=== 'Room'){
+            else if (this.getTypeService() === 'Room'){
                 moneyPerDays = 200;
             }
-            return moneyPerDays * parseFloat(this.getRentDays()) * (1 - parseFloat(this.getDiscount()) / 100);
+            return (moneyPerDays *(this.getRentDays()));
         };
     }
 }

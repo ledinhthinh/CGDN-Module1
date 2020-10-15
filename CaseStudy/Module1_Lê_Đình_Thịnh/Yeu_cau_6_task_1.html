@@ -44,7 +44,7 @@
                 chooseDeleteCustomer();
                 break;
             case "6":
-                return;
+                return displayMainMenu(ondragexit);
             default:
                 alert("Failed!!!");
                 break;
@@ -109,7 +109,7 @@
         }
         while (!checkRentDays);
         customer.setTypeService(prompt("Enter Type Service: \n (Villa,House,Room)"));
-        customer.setTypeRoom(prompt("Enter Type Room: "));
+        customer.setTypeRoom(prompt("Enter Type Room: \n(Vip,Business,Normal"));
         listCustomers.push(customer);
         displayMainMenu();
     }
@@ -122,15 +122,7 @@
         let result = "";
         for (let i = 0; i < listCustomers.length; i++) {
             result += "\n" + (i + 1) + ". " + "Name: " + listCustomers[i].getName() +
-                "\n" + "CMND: " + listCustomers[i].getCMND() +
-                "\n" + "Date of bith: " + listCustomers[i].getBirthday() +
-                "\n" + "Email: " + listCustomers[i].getEmail() +
-                "\n" + "Address: " + listCustomers[i].getAddress() +
-                "\n" + "Type Customer:" + listCustomers[i].getTypeCustomer() +
-                "\n" + "Quantity Included: " + listCustomers[i].getQuantityIncluded() +
-                "\n" + "Rent Days: " + listCustomers[i].getRentDays() +
-                "\n" + "Type Service: " + listCustomers[i].getTypeService() +
-                "\n" + "Type Room: " + listCustomers[i].getTypeRoom();
+                "\n" + "CMND: " + listCustomers[i].getCMND() ;
         }
         result += "\n" + (listCustomers.length + 1) + ".Back to menu.";
         let chooseDisplayInfo = parseInt(prompt(result));
@@ -155,7 +147,7 @@
             let chooseInfoEdit = parseInt(prompt(
                 "1.Name : " + listCustomers[index].getName() +
                 "\n2.CMND : " + listCustomers[index].getCMND() +
-                "\n3.Birthday : " + listCustomers[index].getBirthday() +
+                "\n3.Date of bith : " + listCustomers[index].getBirthday() +
                 "\n4.Email : " + listCustomers[index].getEmail() +
                 "\n5.Address : " + listCustomers[index].getAddress() +
                 "\n6.Type Customer : " + listCustomers[index].getTypeCustomer() +
@@ -175,7 +167,7 @@
             alert("Information of customer:\n" +
                 "Name : " + listCustomers[index].getName() +
                 "\nCMND : " + listCustomers[index].getCMND() +
-                "\nBirthday : " + listCustomers[index].getBirthday() +
+                "\nDate of bith : " + listCustomers[index].getBirthday() +
                 "\nEmail : " + listCustomers[index].getEmail() +
                 "\nAddress : " + listCustomers[index].getAddress() +
                 "\nType Customer : " + listCustomers[index].getTypeCustomer() +
@@ -252,10 +244,10 @@
 
     function deleteCustomer(index) {
         let chooseConfirm = parseInt(prompt(
-            "Are you sure delete Customer: Name: "
-            + listCustomers[index].getName() +
+            "Are you sure delete Customer: " +
+            "Name: " + listCustomers[index].getName() +
             "\nCMND : " + listCustomers[index].getCMND() +
-            "\nBirthday : " + listCustomers[index].getBirthday() +
+            "\nDate of bith : " + listCustomers[index].getBirthday() +
             "\nEmail : " + listCustomers[index].getEmail() +
             "\nAddress : " + listCustomers[index].getAddress() +
             "\nType Customer : " + listCustomers[index].getTypeCustomer() +
