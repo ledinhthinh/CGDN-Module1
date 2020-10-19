@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class customer {
+        constructor() {
+            this.setId = function (Id) {
+                this.Id = Id;
+            };
+            this.getId = function () {
+                return this.Id;
+            };
+            this.setName = function (name) {
+                this.name = name;
+            };
+            this.getName = function () {
+                return this.name;
+            };
+            this.setPhone = function (phone) {
+                this.phone = phone;
+            };
+            this.getPhone = function () {
+                return this.phone;
+            };
+            this.setEmail = function (email) {
+                this.email = email;
+            };
+            this.getEmail = function () {
+                return this.email;
+            };
+            this.setAddress = function (address) {
+                this.address = address;
+            };
+            this.getAddress = function () {
+                return this.address;
+            };
+        }
+    }
+
+    let listCustomer = [];
+
+    function displayMainMenu() {
+        let choose = prompt(
+            "1. Add New Customer" +
+            "\n2. Display Information Customer")
+        switch (choose) {
+            case "1":
+                addNewCustomer();
+                break;
+            case "2":
+                displayCustomers();
+                break;
+        }
+    }
+
+    displayMainMenu()
+
+    function addNewCustomer() {
+        let customer1 = new customer();
+        customer1.setId(prompt("Enter Id number customer: "));
+        customer1.setName(prompt("Enter name customer: "));
+        customer1.setPhone(prompt("Enter Phone number customer: "));
+        customer1.setAddress(prompt("Enter Address customer: "));
+        customer1.setEmail(prompt("Enter Email customer: "));
+        listCustomer.push(customer1);
+        displayMainMenu()
+    }
+
+    function displayCustomers() {
+        if (listCustomer.length === 0) {
+            alert("The listing is currently empty. Please add customer to the list.");
+            displayMainMenu();
+        } else {
+            let rest = "";
+            for (let i = 0; i < listCustomer.length; i++) {
+                rest += "\n" + (i + 1) + ". " + "Id Number " + listCustomer[i].getId() +
+                    "\n" + "Name " + listCustomer[i].getName()
+                    + "\n" + "Phone Number " + listCustomer[i].getPhone()
+                    + "\n" + "Address: " + listCustomer[i].getAddress() + "\n" + "Email: " + listCustomer[i].getEmail();
+            }
+            alert(rest);
+        }
+
+        displayMainMenu()
+    }
+</script>
+</body>
+</html>

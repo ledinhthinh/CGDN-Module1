@@ -147,7 +147,7 @@
             let chooseInfoEdit = parseInt(prompt(
                 "1.Name : " + listCustomers[index].getName() +
                 "\n2.CMND : " + listCustomers[index].getCMND() +
-                "\n3.Date of bith : " + listCustomers[index].getBirthday() +
+                "\n3.Date of birth : " + listCustomers[index].getBirthday() +
                 "\n4.Email : " + listCustomers[index].getEmail() +
                 "\n5.Address : " + listCustomers[index].getAddress() +
                 "\n6.Type Customer : " + listCustomers[index].getTypeCustomer() +
@@ -158,7 +158,7 @@
                 "\n11.Back. "
             ));
             if (chooseInfoEdit < 11) {
-                editInfomationCustomer(chooseInfoEdit - 1);
+                editInfomationCustomer(index,chooseInfoEdit - 1);
             } else {
                 checkEditCustomer = false;
                 displayCustomers();
@@ -167,7 +167,7 @@
             alert("Information of customer:\n" +
                 "Name : " + listCustomers[index].getName() +
                 "\nCMND : " + listCustomers[index].getCMND() +
-                "\nDate of bith : " + listCustomers[index].getBirthday() +
+                "\nDate of birth : " + listCustomers[index].getBirthday() +
                 "\nEmail : " + listCustomers[index].getEmail() +
                 "\nAddress : " + listCustomers[index].getAddress() +
                 "\nType Customer : " + listCustomers[index].getTypeCustomer() +
@@ -196,9 +196,9 @@
         displayCustomers();
     }
 
-    function editInfomationCustomer(index) {
+    function editInfomationCustomer(index, chooseEdit) {
         let editInfo = prompt("Enter Info You Want Change:");
-        switch (index) {
+        switch (chooseEdit) {
             case 0:
                 listCustomers[index].setName(editInfo);
                 break;
@@ -231,7 +231,7 @@
                 break;
             default:
                 alert("Failed");
-                return;
+             return;
         }
         checkEditCustomer = false;
         displayMainMenu();
@@ -247,7 +247,7 @@
             "Are you sure delete Customer: " +
             "Name: " + listCustomers[index].getName() +
             "\nCMND : " + listCustomers[index].getCMND() +
-            "\nDate of bith : " + listCustomers[index].getBirthday() +
+            "\nDate of birth : " + listCustomers[index].getBirthday() +
             "\nEmail : " + listCustomers[index].getEmail() +
             "\nAddress : " + listCustomers[index].getAddress() +
             "\nType Customer : " + listCustomers[index].getTypeCustomer() +
